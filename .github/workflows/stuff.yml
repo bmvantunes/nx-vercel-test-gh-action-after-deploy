@@ -11,4 +11,4 @@ jobs:
     - name: Check project names
       run: echo "${{ github.event.deployment_status.target_url }}"
     - name: Print all event
-      run: echo "${{ toJSON(github) }}"
+      run: echo "${{ toJSON(github.event) }}"
