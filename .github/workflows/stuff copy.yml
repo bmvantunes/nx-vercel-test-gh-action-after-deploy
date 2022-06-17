@@ -1,0 +1,14 @@
+name: After Deployment V2
+on:
+  deployment:
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check project names
+      run: echo "${{ github.event.deployment_status.target_url }}"
+    - name: Print all event
+      run: echo "${{ toJSON(github.event) }}"
