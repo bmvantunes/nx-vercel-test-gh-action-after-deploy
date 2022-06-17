@@ -8,7 +8,7 @@ jobs:
     if: github.event.deployment_status.state == 'success'
     steps:
     - uses: actions/checkout@v2
-    - name: Check project namessssss
+    - name: Check project namesssssskk
       run: echo "${{ github.event.depolyment_status.target_url }}"
     - name: Check project namesssssss
       run: echo "${{ github.event.depolyment_status }}"
