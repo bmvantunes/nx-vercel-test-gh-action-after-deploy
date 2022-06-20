@@ -1,14 +1,16 @@
-name: BrunoZZZZZZ
-on: [deployment_status]
+name: Zeeeee After Deployment ONE
+on:
+  deployment_status:
 
 jobs:
   build:
+    if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
     steps:
       - name: Report PHPUnit Starting
         uses: dflydev/check-runs-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: 'ze manel'
+          name: 'ze-manel'
           id: phpunit
           conclusion: completed
