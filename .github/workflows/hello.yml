@@ -7,6 +7,7 @@ jobs:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
     steps:
+      - echo "Hello Token: ${{ github.sha }}"
       - uses: octokit/request-action@v2.x
         id: create_check_run
         with:
