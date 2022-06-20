@@ -3,7 +3,6 @@ on: [deployment_status]
 
 jobs:
   create-file:
-    if: ${{ github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-two' }}
     runs-on: ubuntu-latest
     steps:
       # Create check run
