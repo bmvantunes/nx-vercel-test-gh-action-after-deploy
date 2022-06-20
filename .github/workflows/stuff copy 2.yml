@@ -1,4 +1,4 @@
-name: After Deployment
+name: After Deployment V3
 on:
   deployment_status:
 jobs:
@@ -8,9 +8,7 @@ jobs:
     if: github.event.deployment_status.state == 'success'
     steps:
     - uses: actions/checkout@v2
-    - name: Check project namesssssskk
+    - name: Check project namessssss
       run: echo "${{ github.event.depolyment_status.target_url }}"
-    - name: Check project namesssssss
-      run: echo "${{ github.event.depolyment_status }}"
-    - name: Print all event
+    - name: Print all events
       run: echo "${{ toJSON(github.event) }}"

@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   pr-install:
-    name: Install Dependenciess
+    name: Install Dependencies
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
