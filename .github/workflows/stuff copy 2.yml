@@ -14,3 +14,16 @@ jobs:
       run: echo "${{ toJSON(github.event.depolyment_status.target_url) }}"
     - name: Print all eventssssss
       run: echo "${{ toJSON(github.event) }}"
+
+  outro:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    # if: github.event.deployment_status.state == 'success'
+    if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-two'
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check project namessssssxxxxx
+      run: echo "${{ toJSON(github.event.depolyment_status.target_url) }}"
+    - name: Print all eventssssssxxxxxxxxxx
+      run: echo "${{ toJSON(github.event) }}"
