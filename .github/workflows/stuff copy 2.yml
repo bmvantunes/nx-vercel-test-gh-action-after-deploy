@@ -12,3 +12,5 @@ jobs:
       run: echo "${{ github.event.depolyment_status.target_url }}"
     - name: Print all events
       run: echo "${{ toJSON(github.event) }}"
+    - name: Print only mine
+      run: echo "${{ toJSON(github.event.nx-vercel-test-gh-action-after-deploy-app-one) }}"
