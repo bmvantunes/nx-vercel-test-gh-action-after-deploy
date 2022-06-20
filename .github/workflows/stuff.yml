@@ -12,5 +12,5 @@ jobs:
       run: echo "${{ github.event.depolyment_status.target_url }}"
     - name: Check project namesssssss
       run: echo "${{ github.event.depolyment_status }}"
-    - name: Print all event
-      run: echo "${{ toJSON(github.event) }}"
+    - name: Print all eventssss
+      run: echo "XXXXXXXXXXXXX ${{ toJSON(github.event) }} YYYYYYYYYYYY"
