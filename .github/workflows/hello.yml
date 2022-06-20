@@ -9,5 +9,6 @@ jobs:
         uses: dflydev/check-runs-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          name: 'ze manel'
           id: phpunit
           status: in_progress
