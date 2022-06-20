@@ -5,7 +5,8 @@ jobs:
   student:
     timeout-minutes: 30
     runs-on: ubuntu-latest
-    if: github.event.deployment_status.state == 'success'
+    # if: github.event.deployment_status.state == 'success'
+    if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
 
     steps:
     - uses: actions/checkout@v2
