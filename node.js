@@ -1,5 +1,8 @@
 const args = process.argv.slice(2);
 
-console.log('brunov22222223333', args.length, (args));
+console.log('brunov22222223333', args.length);
 
-console.log('MANELLL', JSON.stringify(JSON.parse(args)));
+(args).forEach((a, index) => {
+    console.log('IndexXXX', index, a);
+});
+
