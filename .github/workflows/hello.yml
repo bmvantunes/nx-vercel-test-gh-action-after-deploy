@@ -11,15 +11,7 @@ jobs:
       - uses: octokit/request-action@v2.x
         id: create_check_run
         with:
-          route: POST /repos/{owner}/{repo}/check-runs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Update check run to completed, successful status
-      - uses: octokit/request-action@v2.x
-        id: update_check_run
-        with:
-          route: PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}
+          route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
           status: 'completed'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
