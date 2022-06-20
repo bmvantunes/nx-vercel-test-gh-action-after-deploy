@@ -12,7 +12,5 @@ jobs:
       run: echo "${{ toJSON(github.event.depolyment_status.target_url) }}"
     - name: Print all events
       run: echo "${{ toJSON(github.event) }}"
-    - name: Print only mine
-      run: echo ${{ toJSON(github.event) }}
     - name: Node
       run: node ./node.js "${{ toJSON(github.event) }}"
