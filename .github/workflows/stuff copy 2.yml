@@ -2,15 +2,14 @@ name: After Deployment V4
 on:
   deployment_status:
 jobs:
-  test:
-    timeout-minutes: 60
+  student:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     if: github.event.deployment_status.state == 'success'
+
     steps:
     - uses: actions/checkout@v2
     - name: Check project namessssss
       run: echo "${{ toJSON(github.event.depolyment_status.target_url) }}"
     - name: Print all events
       run: echo "${{ toJSON(github.event) }}"
-    - name: Node
-      run: node ./node.js ${{ toJSON(github.event) }}
