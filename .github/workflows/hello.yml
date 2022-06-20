@@ -3,7 +3,7 @@ on:
   deployment_status:
 
 jobs:
-  build:
+  bbbbb:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
     steps:
