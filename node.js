@@ -1,4 +1,4 @@
-const args = process.argv.slice(2);
+const args = process.argv[2];
 
 console.log('brunov22222223333', args.length);
 
