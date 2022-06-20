@@ -12,7 +12,7 @@ jobs:
         id: create_check_run
         with:
           route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
-          name: "Test check run"
+          name: "Test check run AAAA"
           head_sha: ${{ github.sha }}
           output: | # The | is significant!
             title: Test check run title

@@ -6,13 +6,12 @@ jobs:
   bbbbb:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
-    steps:
       - run: echo "Hello --- ${{ github.sha }}"
       - uses: octokit/request-action@v2.x
         id: create_check_run
         with:
           route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
-          name: "Test check run"
+          name: "Test check run ZZZZ"
           head_sha: ${{ github.sha }}
           output: | # The | is significant!
             title: Test check run title
