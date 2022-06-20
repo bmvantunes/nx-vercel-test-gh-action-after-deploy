@@ -5,7 +5,7 @@ jobs:
   create-file:
     name: 'YESSS'
     runs-on: ubuntu-latest
-    if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
+    if: ${{ github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-two' }}
     steps:
       # Create check run
       - uses: octokit/request-action@v2.x
@@ -13,6 +13,7 @@ jobs:
         with:
           route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
           name: 'testeeeeeeeeeeeeeeeeeeee'
+          sha: ${{ github.sha }}
           status: 'completed'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
