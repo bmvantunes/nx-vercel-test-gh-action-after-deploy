@@ -11,4 +11,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: 'ze manel'
           id: phpunit
-          status: complete
+          status: completed
