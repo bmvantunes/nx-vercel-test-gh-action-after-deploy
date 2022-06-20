@@ -4,7 +4,7 @@ on: [deployment_status]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-two'
+    if: ${{ github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-two' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
