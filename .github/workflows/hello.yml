@@ -12,8 +12,5 @@ jobs:
         id: create_check_run
         with:
           route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
-          name: 'testeeeeeeeeeeeeeeeeeeee'
-          sha: ${{ github.sha }}
-          status: 'completed'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
