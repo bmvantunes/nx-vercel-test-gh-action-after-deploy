@@ -3,6 +3,7 @@ on: [deployment_status]
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
       - name: Report PHPUnit Starting
         uses: dflydev/check-runs-action@v1
