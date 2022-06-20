@@ -11,5 +11,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Check project namessssss
       run: echo "${{ toJSON(github.event.depolyment_status.target_url) }}"
-    - name: Print all events
+    - name: Print all eventssssss
       run: echo "${{ toJSON(github.event) }}"
