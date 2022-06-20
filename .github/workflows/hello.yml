@@ -7,10 +7,30 @@ jobs:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
     steps:
-      - name: Report PHPUnit Starting
-        uses: dflydev/check-runs-action@v1
+      - uses: octokit/request-action@v2.x
+        id: create_check_run
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: 'ze-manel'
-          id: phpunit
-          conclusion: completed
+          route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
+          name: "Test check run"
+          head_sha: ${{ github.sha }}
+          output: | # The | is significant!
+            title: Test check run title
+            summary: A summary of the test check run
+            images:
+              - alt: Test image
+                image_url: https://octodex.github.com/images/jetpacktocat.png
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Update check run to completed, successful status
+      - uses: octokit/request-action@v2.x
+        id: update_check_run
+        with:
+          route: PATCH /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs/{check_run_id}
+          owner: octokit
+          repo: request-action
+          check_run_id: ${{ fromJson(steps.create_check_run.outputs.data).id }}
+          conclusion: "success"
+          status: "completed"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
