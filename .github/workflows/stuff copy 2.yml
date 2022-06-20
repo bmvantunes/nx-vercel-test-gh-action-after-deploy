@@ -13,4 +13,4 @@ jobs:
     - name: Print all events
       run: echo "${{ toJSON(github.event) }}"
     - name: Node
-      run: node ./node.js "XXXXXXXXXXXXX ${{ toJSON(github.event) }} YYYYYYYYYYYYY"
+      run: node ./node.js "${{ toJSON(github.event) }}"
