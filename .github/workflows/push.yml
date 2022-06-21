@@ -1,4 +1,4 @@
-name: Fixe
+name: Fixe2222
 
 on:
   push:
@@ -7,7 +7,6 @@ jobs:
   aaaaaa:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello --- ${{ github.sha }}"
       - uses: octokit/request-action@v2.x
         name: AAAAA
         id: create_check_run

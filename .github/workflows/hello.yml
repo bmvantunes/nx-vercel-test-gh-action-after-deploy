@@ -1,4 +1,4 @@
-name: Zeeeee After Deployment BBBBBB
+name: Zeeeee After Deployment BBBBBB222
 on:
   deployment_status:
 
@@ -6,7 +6,6 @@ jobs:
   bbbbb:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
-      - run: echo "Hello --- ${{ github.sha }}"
       - uses: octokit/request-action@v2.x
         name: BBBBB
         id: create_check_run
