@@ -6,6 +6,7 @@ jobs:
   bbbbb:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
+    steps:
       - uses: octokit/request-action@v2.x
         name: BBBBB
         id: create_check_run
