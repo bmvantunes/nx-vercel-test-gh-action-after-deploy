@@ -1,26 +1,26 @@
-name: Zeeeee After Deployment CCCCCCCB222
+name: Zeeeee After Deployment DDDDDDD
 on:
   deployment_status:
 
 jobs:
-  CCCCCCC:
+  DDDDDDD:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
     steps:
       - uses: octokit/request-action@v2.x
-        name: CCCCCCC
+        name: DDDDDDD
         id: create_check_run
         with:
           route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
-          name: "Test check run CCCCCCC"
+          name: "Test check run DDDDDDD"
           conclusion: "success"
           status: "completed"
           head_sha: ${{ github.sha }}
           output: | # The | is significant!
-            title: Test check run CCCCCCCB
-            summary: A summary of the test check CCCCCCCB
+            title: Test check run DDDDDDD
+            summary: A summary of the test check DDDDDDD
             images:
-              - alt: Test CCCCCCCBB
-                image_url: https://octodex.github.com/images/jetpacktocat.png
+              - alt: Test Benfica DDDDDDD
+                image_url: https://sco.wikipedia.org/wiki/File:SL_Benfica_logo.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
