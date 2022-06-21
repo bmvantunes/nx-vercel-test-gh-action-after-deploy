@@ -9,6 +9,7 @@ jobs:
     steps:
       - run: echo "Hello --- ${{ github.sha }}"
       - uses: octokit/request-action@v2.x
+        name: AAAAA
         id: create_check_run
         with:
           route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
