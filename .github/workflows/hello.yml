@@ -1,22 +1,25 @@
-name: PR
-
+name: Zeeeee After Deployment BBBBBB222
 on:
-  pull_request:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  deployment_status:
 
 jobs:
-  pr-install:
-    name: Install Dependencies
-    timeout-minutes: 10
+  bbbbb:
+    if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+      - uses: octokit/request-action@v2.x
+        name: BBBBB
+        id: create_check_run
         with:
-          fetch-depth: 0
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+          route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
+          name: "Test check run BBBBB"
+          conclusion: "success"
+          status: "completed"
+          head_sha: ${{ github.sha }}
+          output: | # The | is significant!
+            title: Test check run BBBBBB
+            summary: A summary of the test check BBBBBB
+            images:
+              - alt: Test BBBBBBB
+                image_url: https://octodex.github.com/images/jetpacktocat.png
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
