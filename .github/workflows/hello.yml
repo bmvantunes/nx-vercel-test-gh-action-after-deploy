@@ -22,7 +22,7 @@ jobs:
           head_sha: ${{ github.sha }}
           output: | # The | is significant!
             title: Test check run AAAAA
-            summary: Hello World [link](https://www.microsoft.com)
+            summary: Hello World [link](https://github.com/bmvantunes/nx-vercel-test-gh-action-after-deploy/runs/${{ github.run_id }})
             images:
               - alt: Test Benfica CCCCC
                 image_url: https://sco.wikipedia.org/wiki/File:SL_Benfica_logo.svg
