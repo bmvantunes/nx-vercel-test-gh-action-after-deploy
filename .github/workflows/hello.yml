@@ -22,7 +22,7 @@ jobs:
           head_sha: ${{ github.sha }}
           output: | # The | is significant!
             title: Test check run AAAAA
-            summary: A summary of the test check WWWWWWW
+            summary: Hello World [link](https://www.microsoft.com)
             images:
               - alt: Test Benfica CCCCC
                 image_url: https://sco.wikipedia.org/wiki/File:SL_Benfica_logo.svg
