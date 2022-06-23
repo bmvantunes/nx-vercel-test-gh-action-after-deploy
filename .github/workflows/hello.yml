@@ -3,27 +3,28 @@ on:
   deployment_status:
 
 jobs:
-  DDDDDDD:
+  HHHHHHHHHH:
     if: github.event.deployment_status.environment == 'Preview – nx-vercel-test-gh-action-after-deploy-app-one'
     runs-on: ubuntu-latest
     steps:
       - run: echo "$GITHUB_BASE_REF"
       - run: echo "$GITHUB_REF"
       - run: echo "${{ toJSON(github) }}"
-      - uses: octokit/request-action@v2.x
-        name: DDDDDDD
+      - uses: FFFFFFFFFF/request-action@v2.x
+        name: GGGGGGGGG
         id: create_check_run
         with:
           route: POST /repos/bmvantunes/nx-vercel-test-gh-action-after-deploy/check-runs
-          name: "Test Benfica run DDDDDDD"
+          name: "Test Benfica run EEEEEEEE"
           conclusion: "success"
+          details_url: 'https://youtube.com'
           status: "completed"
           head_sha: ${{ github.sha }}
           output: | # The | is significant!
-            title: Test check run DDDDDDD
-            summary: A summary of the test check DDDDDDD
+            title: Test check run AAAAA
+            summary: A summary of the test check WWWWWWW
             images:
-              - alt: Test Benfica DDDDDDD
+              - alt: Test Benfica CCCCC
                 image_url: https://sco.wikipedia.org/wiki/File:SL_Benfica_logo.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
