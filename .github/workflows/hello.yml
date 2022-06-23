@@ -10,7 +10,7 @@ jobs:
       - run: echo "$GITHUB_BASE_REF"
       - run: echo "$GITHUB_REF"
       - run: echo "${{ toJSON(github) }}"
-      - uses: FFFFFFFFFF/request-action@v2.x
+      - uses: octokit/request-action@v2.x
         name: GGGGGGGGG
         id: create_check_run
         with:
